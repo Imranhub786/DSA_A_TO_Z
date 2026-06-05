@@ -1,0 +1,35 @@
+Count all Digits of a Number
+
+class Solution {
+    public static int countDigits(int n) {
+        // Code here
+        int count=0;
+        while(n > 0){
+            int lastdigit=n%10;
+            count++;
+            n=n/10;
+        }
+        return count;
+        
+    }
+}
+Approach
+Step 1: Observe the Pattern
+Every time we divide a number by 10, the last digit gets removed.
+I know that dividing a number by 10 removes its last digit. 
+So I repeatedly divide the number by 10 until it becomes 0. 
+Each division removes one digit, and I maintain a counter to track how many times this happens.
+The final count gives the total number of digits in the number.
+
+Most optimal Approach by using mathematical Log10
+class Solution {
+    public static int countDigits(int n) {
+        // Code here
+        int digits = (int) (Math.log10(n)) + 1;  
+        return digits;
+        
+    }
+}
+The logic is based on logarithms. For a number n, if 10^k ≤n< 10k+1
+, then it has k+1 digits. Taking base-10 logarithm gives k≤log10(n)<k+1. 
+Therefore, floor(log10(n)) gives k, and adding 1 gives the total number of digits.
