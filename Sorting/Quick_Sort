@@ -1,0 +1,164 @@
+Quick Sort says: "Put one element in its correct position first, then divide."
+
+Quick Sort is asked much more frequently in interviews because it is:
+
+Faster on average than Merge Sort.
+An in-place sorting algorithm (doesn't need an extra array like Merge Sort).
+Based on a very clever idea called Partitioning.
+
+Universal Formula:
+
+Choose Pivot
+
+↓
+
+Partition
+
+↓
+
+Pivot Fixed
+
+↓
+
+Left Recursion
+
+↓
+
+Right Recursion
+
+Quick Sort has only 2 functions.
+
+quickSort()
+
+partition()
+
+For Pivot
+
+Choose First Element as Pivot
+           ↓
+Move i from Left
+           ↓
+Move j from Right
+           ↓
+Swap Wrong Elements
+           ↓
+Repeat Until i > j
+           ↓
+Swap Pivot with j
+           ↓
+Pivot Fixed
+public static void quickSort(int[] arr,int low,int high){
+
+    if(low<high){
+
+        int pIndex=partition(arr,low,high);
+
+        quickSort(arr,low,pIndex-1);
+
+        quickSort(arr,pIndex+1,high);
+
+    }
+
+}
+public static int partition(int[] arr, int low, int high) {
+
+    int pivot = arr[low];
+
+    int i = low;
+    int j = high;
+
+    while (i < j) {
+
+        while (arr[i] <= pivot && i <= high - 1) {
+            i++;
+        }
+
+        while (arr[j] > pivot && j >= low + 1) {
+            j--;
+        }
+
+        if (i < j) {
+            swap(arr, i, j);
+        }
+    }
+
+    swap(arr, low, j);
+
+    return j;
+}
+
+Complete Dry Run
+
+Array
+
+6 3 8 5 2 7
+
+Call
+
+quickSort(0,5)
+
+↓
+
+Partition
+
+5 3 2 |6| 8 7
+
+↓
+
+Pivot Index
+
+3
+
+↓
+
+Call
+
+quickSort(0,2)
+
+↓
+
+Partition
+
+3 2 |5|
+
+↓
+
+Pivot Index
+
+2
+
+↓
+
+Call
+
+quickSort(0,1)
+
+↓
+
+Partition
+
+2 |3|
+
+↓
+
+Return
+
+↓
+
+Right side
+
+quickSort(4,5)
+
+↓
+
+Partition
+
+7 |8|
+
+↓
+
+Done.
+
+Final
+
+2 3 5 6 7 8
