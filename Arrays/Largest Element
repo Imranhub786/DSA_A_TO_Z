@@ -14,3 +14,86 @@ class Solution {
         
     }
 }
+
+DRY RUN CODE:
+Array
+
+[7, 2, 15, 9, 20, 5]
+
+Initially
+
+max = 7
+
+↓
+
+2 > 7 ?
+
+No
+
+↓
+
+15 > 7 ?
+
+Yes
+
+max = 15
+
+↓
+
+9 > 15 ?
+
+No
+
+↓
+
+20 > 15 ?
+
+Yes
+
+max = 20
+
+↓
+
+5 > 20 ?
+
+No
+
+↓
+
+Answer = 20
+
+What is an Invariant?
+
+An invariant is something that remains true after every iteration of the loop.
+
+For this problem:
+
+Invariant: After processing the first i elements, max stores the largest value seen so far.
+
+This is the mindset interviewers want.
+
+Golden Rule (Remember for Life)
+
+Whenever you're finding a maximum or minimum, ask yourself:
+
+What is my initial answer?
+arr[0] if the array is guaranteed non-empty.
+Integer.MIN_VALUE / Integer.MAX_VALUE if you plan to examine every element.
+Have I already considered the first element?
+If yes, start the loop at i = 1.
+If no, start the loop at i = 0.
+
+This simple rule will prevent one of the most common bugs in array problems.
+
+Time Complexity
+
+Loop runs
+n-1 times.
+Therefore
+O(n)
+
+Space Complexity
+Only
+one variable max
+So
+O(1)
