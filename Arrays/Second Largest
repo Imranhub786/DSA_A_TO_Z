@@ -30,3 +30,20 @@ class Solution {
     }
 }
 
+
+           Current Number
+                  │
+                  ▼
+      Is Current > Largest ?
+             /          \
+           YES           NO
+           │             │
+           ▼             ▼
+Second = Largest    Is Current > SecondLargest
+Largest = Current          &&
+                           Current != Largest ?
+                          /             \
+                        YES             NO
+                        │               │
+                        ▼               ▼
+                Second = Current     Do Nothing
