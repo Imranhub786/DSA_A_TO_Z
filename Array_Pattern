@@ -1,0 +1,20 @@
+| No | Pattern                 | Master Level | Questions to Solve |
+| -- | ----------------------- | ------------ | ------------------ |
+| 1  | Traversal               | Easy         | 8-10               |
+| 2  | Min / Max               | Easy         | 5                  |
+| 3  | Counting Frequency      | Easy         | 8                  |
+| 4  | Prefix Sum              | Medium       | 12                 |
+| 5  | Sliding Window          | Medium       | 20                 |
+| 6  | Two Pointers            | Medium       | 20                 |
+| 7  | Binary Search           | Medium       | 20                 |
+| 8  | Sorting Pattern         | Medium       | 10                 |
+| 9  | Hashing                 | Medium       | 15                 |
+| 10 | Matrix                  | Medium       | 15                 |
+| 11 | Interval                | Medium       | 12                 |
+| 12 | Merge Interval          | Medium       | 8                  |
+| 13 | Cyclic Sort             | Medium       | 8                  |
+| 14 | Kadane                  | Medium       | 8                  |
+| 15 | Dutch National Flag     | Medium       | 5                  |
+| 16 | Monotonic Stack         | Hard         | 15                 |
+| 17 | Greedy Array            | Hard         | 10                 |
+| 18 | Binary Search on Answer | Hard         | 20                 |
