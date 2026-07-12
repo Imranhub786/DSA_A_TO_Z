@@ -9,3 +9,14 @@ class Solution {
         return true;  // Return true if the array is sorted
     }
 }
+
+
+The Secret Trick
+
+Don't think:
+
+"When should I return true?"
+
+Instead think:
+
+"When can I prove the answer is false?"
