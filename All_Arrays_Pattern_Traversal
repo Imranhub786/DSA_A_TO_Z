@@ -64,3 +64,33 @@ Reverse Print
 Check Sorted Array
 Second Largest
 Second Smallest
+*
+Memory Formula (Use for Life)
+
+Whenever you see:
+Find Largest
+Find Smallest
+Highest
+Lowest
+Maximum
+Minimum
+Think instantly:
+Initialize
+        ↓
+Traverse
+        ↓
+Compare
+        ↓
+Update
+        ↓
+Return
+
+I call this the ITCUR Formula:
+
+I → Initialize
+T → Traverse
+C → Compare
+U → Update
+R → Return
+
+This same thinking works for maximum, minimum, second largest, second smallest, stock profit, Kadane's algorithm, and many other array problems.
