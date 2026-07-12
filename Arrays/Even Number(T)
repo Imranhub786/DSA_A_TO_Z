@@ -15,3 +15,31 @@ public class Solution {
 
 Time Complexity: O(n) (optimal)
 Space Complexity: O(1)
+Master Memory Trick
+
+Whenever the question contains these words:
+
+Count
+Number of
+Total
+Frequency
+Occurrences
+
+Your brain should immediately think:
+
+Initialize count = 0
+        ↓
+Traverse
+        ↓
+Check condition
+        ↓
+count++
+        ↓
+Return count
+
+I call this the CTCR Formula:
+
+C → Counter (count = 0)
+T → Traverse
+C → Check the condition
+R → Return the count
