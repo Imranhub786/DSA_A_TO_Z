@@ -1,1 +1,66 @@
 
+What is Traversal?
+
+Traversal means:
+
+Visit every element of the array exactly once.
+
+Think of standing in front of a line of people. To know everyone's name, you simply walk from the first person to the last. That's traversal.
+Array
+
+5 3 7 2 9
+
+↓
+
+5 → 3 → 7 → 2 → 9
+
+Universal Formula
+
+Whenever a question says:
+
+Find...
+Count...
+Print...
+Check...
+Update...
+Search...
+
+your first thought should be:
+
+"Can I solve this by looking at each element once?"
+
+If yes, use traversal.
+
+Universal Traversal Template (Java)
+for (int i = 0; i < arr.length; i++) {
+
+    // Process current element
+
+}
+or
+for (int num : arr) {
+
+    // Process current element
+
+}
+
+Revision Notes (1-Minute Recall)
+Visit each element once.
+Best for counting, searching, summing, printing, checking.
+Usually one for loop.
+Time: O(n)
+Space: O(1)
+Think: "Can I solve this in one pass?"
+
+
+Practice Order
+Sum of Array
+Maximum Element
+Minimum Element
+Count Even/Odd
+Count Positive/Negative
+Linear Search
+Reverse Print
+Check Sorted Array
+Second Largest
+Second Smallest
