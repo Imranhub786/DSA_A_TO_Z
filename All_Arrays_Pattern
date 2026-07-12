@@ -18,3 +18,18 @@
 | 16 | Monotonic Stack         | Hard         | 15                 |
 | 17 | Greedy Array            | Hard         | 10                 |
 | 18 | Binary Search on Answer | Hard         | 20                 |
+
+
+| Problem          | Pattern                          |
+| ---------------- | -------------------------------- |
+| Largest Element  | Traversal + Max                  |
+| Smallest Element | Traversal + Min                  |
+| Linear Search    | Traversal + Search               |
+| Count Even       | Traversal + Counting             |
+| Check Sorted     | Traversal + Validation           |
+| Second Largest   | Traversal + Max + State Tracking |
+| Third Largest    | Traversal + Max + State Tracking |
+| Stock Buy/Sell   | Traversal + Min + State Tracking |
+| Kadane           | Traversal + State Tracking       |
+| Prefix Sum       | Traversal + Running Sum          |
+| Move Zeroes      | Two Pointers                     |
