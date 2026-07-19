@@ -1,0 +1,40 @@
+Pattern 3: Prefix Sum
+Prefix Sum is a technique where we precompute the cumulative sum of an array so that we can answer sum-related queries efficiently.
+Q.Range Sum Query.
+Q.Subarray Sum Equals K.
+Q.Equilibrium Index.
+Q.Continuous Subarray.
+Prefix[i] = Sum of everything
+from index 0 to index i
+
+Recognition Keywords
+
+Whenever you read:
+Sum
+Range Sum
+Continuous Sum
+Subarray Sum
+Interval Sum
+Running Sum
+Prefix
+Cumulative Sum
+Immediately think: Prefix Sum
+
+How to Build Prefix
+Pseudocode
+Prefix[0] = Array[0]
+For i = 1 to n-1
+Prefix[i] = Prefix[i-1] + Array[i]
+
+Universal Formula
+For any range
+L
+to
+R
+Range Sum = Prefix[R] - Prefix[L-1]
+
+TIME
+
+Build → O(n)
+
+Query → O(1)
