@@ -33,3 +33,14 @@
 | Kadane           | Traversal + State Tracking       |
 | Prefix Sum       | Traversal + Running Sum          |
 | Move Zeroes      | Two Pointers                     |
+
+
+Pattern 3: Prefix Sum:
+Range Sum Query.
+Subarray Sum Equals K.
+Equilibrium Index.
+Continuous Subarray.
+Prefix Sum is a technique where we precompute the cumulative sum of an array so that we can answer sum-related queries efficiently.
+Prefix[i]=Sum of everything
+from index 0
+to index i
