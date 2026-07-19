@@ -1,0 +1,53 @@
+Brute Force:
+
+class Solution {
+    public ArrayList<Integer> rangeSumQueries(int[] arr, int[][] queries) {
+        // code here
+        ArrayList<Integer> result=new ArrayList<>();
+        for(int i=0;i<queries.length;i++){
+            int left=queries[i][0];
+            int right=queries[i][1];
+            int sum=0;
+            for(int j=left;j<=right;j++){
+                sum+=arr[j];
+            }
+            result.add(sum);
+        }
+        return result;
+        
+    }
+}
+
+Optimal Approach:
+
+class Solution {
+    public ArrayList<Integer> rangeSumQueries(int[] arr, int[][] queries) {
+        // code here
+        ArrayList<Integer> result=new ArrayList<>();
+        int [] prefix=new int[arr.length];
+        prefix[0]=arr[0];
+        for(int i=1;i<arr.length;i++){
+            prefix[i]=prefix[i-1]+ arr[i];
+        }
+        for(int i=0;i<queries.length;i++){
+            int left=queries[i][0];
+            int right=queries[i][1];
+            if(left==0){
+                result.add(prefix[right]);
+            }else{
+                result.add(prefix[right] - prefix[left - 1]);
+            }
+        }
+        return result;
+        
+    }
+}
+
+Interview Explanation:
+I first considered the brute-force approach, where I calculate the sum for each query by iterating from L to R. That would take O(n) per query, giving O(n × q) overall, which is inefficient for large inputs.
+
+Since the array is immutable and there are no updates, I preprocess it using a prefix sum array. Each prefix[i] stores the cumulative sum from index 0 to i.
+
+For each query, if L is 0, the answer is simply prefix[R]. Otherwise, I subtract the cumulative sum before L, so the answer is prefix[R] - prefix[L-1]. This lets me answer every query in O(1) time.
+
+Building the prefix array takes O(n), processing all queries takes O(q), so the overall time complexity is O(n + q), and the space complexity is O(n)
