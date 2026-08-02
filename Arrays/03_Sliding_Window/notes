@@ -1,0 +1,12 @@
+Lifetime Sliding Window Formula
+                 TARGET
+                    │
+          ┌─────────┼─────────┐
+          │         │         │
+       SUM <      SUM ==    SUM >
+       TARGET     TARGET     TARGET
+          │         │         │
+          ↓         ↓         ↓
+       EXPAND      FOUND     SHRINK
+       RIGHT                 LEFT
+
