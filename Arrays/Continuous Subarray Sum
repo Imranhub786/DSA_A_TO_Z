@@ -21,3 +21,27 @@ class Solution {
 
 Time  → O(n²)
 Space → O(1)
+
+class Solution {
+    public boolean checkSubarraySum(int[] nums, int k) {
+        HashMap<Integer,Integer>hmap=new HashMap<>();
+        hmap.put(0,-1);
+        int prefixSum=0;
+        for(int i=0;i<nums.length;i++){
+            prefixSum+= nums[i];
+            int reminder=prefixSum % k;
+            if(hmap.containsKey(reminder)){
+                if(i - hmap.get(reminder) >=2 ){
+                    return true;
+                }
+            }else{
+            hmap.put(reminder, i);
+            }
+        }
+        return false;
+
+    }
+}
+
+Time  → O(n)
+Space → O(n)
