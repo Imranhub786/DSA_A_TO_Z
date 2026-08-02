@@ -14,3 +14,31 @@ class Solution {
         return count;
     }
 }
+
+
+
+Optimal Approach:
+class Solution {
+    public int subarraysDivByK(int[] nums, int k) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+        int count=0;
+        int prefixSum=0;
+        map.put(0,1);
+        for(int number : nums){
+            prefixSum+= number;
+            int reminder=prefixSum % k;
+            if(reminder < 0){
+                reminder +=k;
+            }
+            if(map.containsKey(reminder)){
+                count+=map.get(reminder);
+            }
+            map.put(reminder, map.getOrDefault(reminder, 0)+1);
+        }
+        
+        return count;
+    }
+}
+
+Time  → O(n)
+Space → O(k) worst-case remainder states
