@@ -20,4 +20,34 @@ class Solution {
     }
 }
 
+Time: O(n²)
+Space: O(1)
 
+
+Optimize Approch:
+
+class Solution {
+    public int findMaxLength(int[] nums) {
+       HashMap<Integer, Integer> map=new HashMap<>();
+       map.put(0,-1);
+       int maxLen=0;
+       int curSum=0;
+       for(int i=0;i<nums.length;i++){
+            if(nums[i]==1){
+                curSum++;
+            }else{
+                curSum--;
+            }
+            if(map.containsKey(curSum)){
+                int prevIndex=map.get(curSum);
+                int length=i- prevIndex;
+                maxLen=Math.max(maxLen, length);
+            }
+            else{
+                map.put(curSum, i);
+            }
+       }
+       return maxLen;
+        
+    }
+}
