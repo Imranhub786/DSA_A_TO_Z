@@ -1,0 +1,54 @@
+Brute Force Approach:
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int []ans=new int[nums.length];
+        int index=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=0){
+                ans[index]=nums[i];
+                index++;
+            }
+        }
+        for(int i=0;i<nums.length;i++){
+            nums[i]=ans[i];
+        }
+    }
+}
+
+Time  : O(n)
+Space : O(n)
+
+Optimal Approach:
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+       int left=0;
+       for(int right=0;right<nums.length;right++){
+            if(nums[right]!=0){
+                int temp=nums[right];
+                nums[right]=nums[left];
+                nums[left]=temp;
+                left++;
+            }
+       }
+    }
+}
+
+At any point during the loop:
+
+[ non-zero elements | elements not processed yet ]
+                    ↑
+                   left
+
+Everything before left is already in the correct non-zero order.
+right is exploring the remaining elements.
+When right finds a non-zero:
+nums[right] != 0
+we put it at:
+nums[left]
+and advance left.
+
+Time  : O(n)
+Space : O(1)
+
