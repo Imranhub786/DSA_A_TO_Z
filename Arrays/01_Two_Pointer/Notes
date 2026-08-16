@@ -1,0 +1,54 @@
+🎯 Two Pointers Mastery Roadmap
+Think of Two Pointers as a family of techniques, not one algorithm.
+                         TWO POINTERS
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        ↓                     ↓                     ↓
+   Opposite Ends         Same Direction       Multiple/Advanced
+        │                     │                     │
+        ↓                     ↓                     ↓
+   left + right           slow + fast        3Sum / 4Sum
+   sorted arrays          sliding boundary    Partitioning
+   palindrome             in-place           Merge techniques
+   pair problems          duplicate removal   Advanced variants
+
+🏆 The order I recommend YOU practice
+
+Don't randomly solve 50 Two-Pointer questions.
+
+Follow this progression:
+
+Phase 1 — Foundation
+Reverse Array
+Reverse String
+Valid Palindrome
+Two Sum II
+Pair Sum in Sorted Array
+Phase 2 — Slow/Fast
+Remove Element
+Remove Duplicates from Sorted Array
+Move Zeroes
+Remove Duplicates from Sorted Array II
+Phase 3 — Two Sorted Arrays
+Merge Sorted Array
+Intersection of Two Arrays
+Intersection of Two Arrays II
+Is Subsequence
+Phase 4 — Three Pointers / Partitioning
+Sort Colors
+Partition Array
+Dutch National Flag
+Phase 5 — 3Sum Family
+3Sum
+3Sum Closest
+4Sum
+Phase 6 — Optimization
+Container With Most Water
+Trapping Rain Water
+Phase 7 — Advanced Variants
+Valid Palindrome II
+Backspace String Compare
+Boats to Save People
+Squares of a Sorted Array
+Interval-related pointer techniques
+Advanced two-pointer + greedy problems
