@@ -52,3 +52,64 @@ Boats to Save People
 Squares of a Sorted Array
 Interval-related pointer techniques
 Advanced two-pointer + greedy problems
+
+
+Two Pointer Cheat Sheet
+1. OPPOSITE ENDS
+left →       ← right
+Used for:
+pair sum
+palindrome
+reverse
+container
+
+2. SLOW + FAST
+slow →
+fast →
+Used for:
+remove
+compact
+duplicates
+move zeroes
+
+4. FIX + TWO POINTERS
+
+       i
+       ↓
+[--------------]
+ ↑              ↑
+left           right
+Used for:
+3Sum
+3Sum Closest
+4Sum
+K-Sum
+
+5. PARTITION
+low → mid → ← high
+Used for:
+Sort Colors
+Dutch National Flag
+partitioning
+
+6. BOUNDARY OPTIMIZATION
+left →       ← right
+
+Maintain:
+best answer
+left state
+right state
+Used for:
+Container
+Trapping Rain Water
+
+7. SKIP / SEARCH POINTERS
+i →
+j →
+
+One pointer searches,
+another advances conditionally.
+Used for:
+subsequence
+backspace comparison
+string matching
