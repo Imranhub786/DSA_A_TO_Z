@@ -1,0 +1,103 @@
+Brute Force Approach:
+
+
+// Class to solve 3-sum problem
+class Solution {
+    // Function to find triplets with sum zero
+    public List<List<Integer>> threeSum(int[] arr, int n) {
+        // Store unique triplets
+        Set<List<Integer>> st = new HashSet<>();
+
+        // First loop for first element
+        for (int i = 0; i < n; i++) {
+            // Second loop for second element
+            for (int j = i + 1; j < n; j++) {
+                // Third loop for third element
+                for (int k = j + 1; k < n; k++) {
+                    // If triplet sum is zero
+                    if (arr[i] + arr[j] + arr[k] == 0) {
+                        // Store sorted triplet to avoid duplicates
+                        List<Integer> temp = Arrays.asList(arr[i], arr[j], arr[k]);
+                        Collections.sort(temp);
+                        st.add(temp);
+                    }
+                }
+            }
+        }
+
+        // Convert set to list
+        return new ArrayList<>(st);
+    }
+}
+
+// Driver class
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {-1, 0, 1, 2, -1, -4};
+        int n = arr.length;
+        Solution obj = new Solution();
+        List<List<Integer>> res = obj.threeSum(arr, n);
+
+        for (List<Integer> triplet : res) {
+            for (int num : triplet) System.out.print(num + " ");
+            System.out.println();
+        }
+    }
+}
+
+
+Time complexity: O(n³)
+Space Complexity: O(1)
+
+Optimal Approach:
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> res=new ArrayList<>();
+        Arrays.sort(nums);
+        for(int i=0;i<nums.length-2;i++){
+            if(i > 0 && nums[i]==nums[i-1]) continue;
+            int l=i+1;
+            int r=nums.length-1;
+            while(l < r){
+                int sum=nums[i]+nums[l]+nums[r];
+                if(sum==0){
+                    res.add(Arrays.asList(nums[i],nums[l],nums[r]));
+                    while(l < r && nums[l]==nums[l+1]) l++;
+                    while(l < r && nums[r]==nums[r-1]) r--;
+                    l++;
+                    r--; 
+                }else if(sum > 0){
+                    r--;
+                }else{
+                    l++;
+                }
+            }
+        }
+        return res;
+    }
+}
+
+When processing i:
+compare BACKWARD
+        ↓
+nums[i] == nums[i - 1]
+
+left duplicate  → compare forward
+right duplicate → compare backward
+
+Sort
+  ↓
+Fix i
+  ↓
+left = i + 1
+right = n - 1
+  ↓
+while left < right
+  ↓
+Calculate sum
+  ↓
+┌───────────────┐
+│ sum < 0       │ → left++
+│ sum == 0      │ → save + skip duplicates + both move
+│ sum > 0       │ → right--
+└───────────────┘
