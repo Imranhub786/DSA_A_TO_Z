@@ -1,0 +1,40 @@
+Brute Force Approach:
+class Solution {
+    public int maxWater(int arr[]) {
+        // Code Here
+        int n=arr.length;
+        int maxArea=0;
+        for(int l=0;l<n-1;l++){
+            for(int r=l+1;r<n;r++){
+                int h=Math.min(arr[l], arr[r]);
+                int w=r-l;
+                int area=h * w;
+                maxArea=Math.max(maxArea, area);
+            }
+        }
+        return maxArea;
+    }
+}
+
+Optimize Approach:
+class Solution {
+    public int maxArea(int[] height) {
+        int n=height.length;
+        int left=0,right=n-1;
+        int maxArea=0;
+        while(left <= right){
+            int h=Math.min(height[left], height[right]);
+            int w=right-left;
+            int area=h * w;
+            maxArea=Math.max(maxArea, area);
+            if(height[left] < height[right]){
+                left++;
+            }else{
+                right--;
+            }
+        }
+        return maxArea;
+        
+    }
+}
+
