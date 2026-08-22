@@ -1,0 +1,42 @@
+Brute_Fore_Approach:
+class Solution {
+    public int maxWater(int arr[]) {
+        // code here
+        int n=arr.length;
+        int totalwater=0;
+        for(int i=0;i<n;i++){
+            int leftMax=0, rightMax=0;
+            for(int j=0;j<=i;j++){
+                leftMax=Math.max(leftMax, arr[j]);
+            }
+            for(int j=i;j<n;j++){
+                rightMax=Math.max(rightMax, arr[j]);
+            }
+            totalwater+=Math.min(leftMax, rightMax) - arr[i];
+        }
+        return totalwater;
+    }
+}
+
+
+Optimal Approach:
+class Solution {
+    public int trap(int[] height) {
+        int left=0;
+        int right=height.length-1;
+        int water=0;
+        int left_max=height[left], right_max=height[right];
+        while(left < right){
+            if(left_max < right_max){
+                left++;
+                left_max=Math.max(left_max, height[left]);
+                water+=left_max - height[left];
+            }else{
+                right--;
+                right_max=Math.max(right_max, height[right]);
+                water+=right_max - height[right];
+            }
+        }
+        return water;
+    }
+}
