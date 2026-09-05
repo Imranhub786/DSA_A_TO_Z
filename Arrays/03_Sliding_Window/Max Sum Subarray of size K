@@ -1,0 +1,52 @@
+Brute_Force
+
+class Solution {
+    public int maxSubarraySum(int[] arr, int k) {
+        int n = arr.length;
+        
+        // Edge case: if the array has fewer elements than k
+        if (n < k) {
+            return -1; 
+        }
+        
+        int maxSum = Integer.MIN_VALUE;
+
+        // Loop through all possible starting points for a subarray of size k
+        for (int i = 0; i <= n - k; i++) {
+            int currentSum = 0;
+            
+            // Calculate the sum of k consecutive elements starting from index i
+            for (int j = i; j < i + k; j++) {
+                currentSum += arr[j];
+            }
+            
+            // Update the maximum sum found so far
+            maxSum = Math.max(maxSum, currentSum);
+        }
+
+        return maxSum;
+    }
+}
+
+Optimal Approach:
+class Solution {
+    public int maxSubarraySum(int[] arr, int k) {
+        // Code here
+        int n=arr.length;
+        int windowSize=0;
+        for(int i=0;i<k;i++){
+            windowSize+=arr[i];
+        }
+        int maxAns=windowSize;
+        for(int j=k;j<n;j++){
+            windowSize+=arr[j];
+            windowSize-=arr[j-k];
+            maxAns=Math.max(maxAns, windowSize);
+            
+        }
+        return maxAns;
+        
+    }
+}
+Time Complexity: O(n) 
+Space Complexity: O(1)
