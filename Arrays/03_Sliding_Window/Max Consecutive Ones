@@ -1,3 +1,38 @@
+Brute_Force_Approac:
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int n = nums.length;
+        int maxCount = 0;
+        
+        // i represents the starting point of our sequence
+        for (int i = 0; i < n; i++) {
+            
+            // If the starting point is 0, we can skip it (no sequence of 1s starts here)
+            if (nums[i] == 0) continue;
+            
+            int currentLen = 0;
+            
+            // j checks the current element and moves forward from i
+            for (int j = i; j < n; j++) {
+                
+                if (nums[j] == 1) {
+                    currentLen++; // Streak continues
+                } else {
+                    break; // Streak broken by a 0, stop looking further for this 'i'
+                }
+            }
+            
+            // Update the global maximum with the streak found starting at 'i'
+            maxCount = Math.max(maxCount, currentLen);
+        }
+        
+        return maxCount;
+    }
+}
+
+
+
 Optimal Approach:
 class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
